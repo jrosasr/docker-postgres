@@ -8,10 +8,8 @@ services:
         - "elyon-db:/var/lib/postgresql/data"
     ports:
         - "5432:5432"
-    environment:
-      - POSTGRES_DB=elyon
-      - POSTGRES_USER=elyon
-      - POSTGRES_PASSWORD=elyon
+    env_file:
+      - .env
 
 volumes:
   elyon-db:
