@@ -11,7 +11,7 @@ DATABASE=""
 docker exec -it "$CONTAINER_NAME" mkdir -p "$BACKUP_DIR_CONTAINER"
 
 # Generar el nombre del archivo de respaldo
-BACKUP_FILE="backup_postgres16_backup_$(date +%Y_%m_%d_%H%M%S).sql"
+BACKUP_FILE="backup_postgres16_$(date +%Y_%m_%d_%H%M%S).sql"
 
 # Ejecutar pg_dump dentro del contenedor y guardar el archivo en el volumen
 docker exec -it "$CONTAINER_NAME" pg_dump -U "$USER" -d "$DATABASE" -f "$BACKUP_DIR_CONTAINER/$BACKUP_FILE"
