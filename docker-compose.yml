@@ -1,14 +1,14 @@
 services:
-  elyon-postgres:
+  heypal-postgres:
     image: postgres
     restart: always
     volumes:
-        - "elyon-db:/var/lib/postgresql/data"
+        - "heypal-db:/var/lib/postgresql/data"
     ports:
-        - "5432:5432"
+        - "5437:5432"
     env_file:
       - .env
 
 volumes:
-  elyon-db:
+  heypal-db:
     external: true
